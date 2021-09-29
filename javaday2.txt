@@ -1,0 +1,174 @@
+package com.company;
+import java.awt.*;
+import java.lang.*;
+import java.util.*;
+import java.lang.*;
+class student {
+    void studentname() {
+        Scanner sc = new Scanner(System.in);
+        String[] stu = new String[20];
+        int n,count=0,flag=0;
+
+        while(true) {
+            System.out.println("1:INSERT\n2:DISPLAY\n3:UPDATE\n4:SEARCH\n0:EXIT");
+            System.out.println("enter the option");
+            n = sc.nextInt();
+            switch (n) {
+                case 1:
+                        System.out.println("enter the student name");
+                        stu[count] = sc.next();
+                        count++;
+                    break;
+                case 2:
+                        System.out.println("existing students are");
+                        for (int i = 0; i < count; i++) {
+                            System.out.println(stu[i]);
+                        }
+                        break;
+                case 3:System.out.println("enter a existing name to update");
+                    String str=sc.next();
+                    for(int i=0;i<count;i++) {
+                        if (stu[i].equals(str)) {
+                            System.out.println("the name exists in the array enter the new name");
+                            String str2=sc.next();
+                            stu[i]=str2;
+                        }
+                    }
+                    break;
+                case 4:
+                     System.out.println("enter the name to search");
+                     String str1=sc.next();
+                     for(int i=0;i<count;i++)
+                     {
+                         if(stu[i].equals(str1))
+                         {
+                             System.out.println("name exists");
+                             flag=1;
+                         }
+                     }
+                     if(flag==0)
+                     {
+                         System.out.println("name not found");
+                     }
+                     break;
+                case 0:System.exit(0);
+                }
+            }
+
+        }
+    }
+public class Main {
+    public static void main(String[] args) {
+       student obj=new student();
+       obj.studentname();
+        }
+
+    }
+
+//program for a calculator
+package com.company;
+import java.sql.SQLOutput;
+import java.util.*;
+class operations {
+
+    void add(int[] x,int n) {
+        int add = 0;
+        if (n >=5) {
+            System.out.println("invalid");
+        }
+        else {
+            for (int i = 0; i < n; i++) {
+                add = add + x[i];
+            }
+            System.out.println("sum is" + add);
+        }
+    }
+    void mul(int[] x,int n) {
+        int mul = 1;
+        if (n >= 5) {
+            System.out.println("invalid");
+        } else {
+            for (int i = 0; i < n; i++) {
+                mul = (mul * x[i]);
+            }
+            System.out.println("multiplication is" + mul);
+        }
+    }
+    void div(int x,int y){
+        int res=x/y;
+        System.out.println("division result is"+res);
+    }
+    void sub(int[] x,int n) {
+        int sub = 0;
+        if (n >=5) {
+            System.out.println("invalid");
+        }
+        else {
+            for (int i = 0; i < n; i++) {
+                sub =x[i]-sub;
+            }
+            System.out.println("Subtraction is" + add);
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        operations obj = new operations();
+        int res,n;
+        int [] a=new int[100];
+        System.out.println("1.ADDITION/n2.MULTIPLICATION/n3.DIVISON/n4.SUBTRACTION");
+        System.out.println("enter the choice");
+        int ch = sc.nextInt();
+
+        switch (ch) {
+            case 1:System.out.println("enter the number of integers");
+                n = sc.nextInt();
+                if(n>=5){
+                    System.out.println("invalid");
+                    break;
+                }
+                else
+                System.out.println("enter the numbers");
+                for(int i=0;i<n;i++) {
+                    a[i] = sc.nextInt();
+                }
+                obj.add(a,n);
+                break;
+            case 2:System.out.println("enter the number of integers");
+                n = sc.nextInt();
+                if(n>=5){
+                    System.out.println("invalid");
+                    break;
+                }
+                else
+                System.out.println("enter the numbers");
+                for(int i=0;i<n;i++) {
+                    a[i] = sc.nextInt();
+                }
+                obj.mul(a,n);
+                break;
+            case 3:
+                System.out.println("enter two numbers");
+                int x=sc.nextInt();
+                int y=sc.nextInt();
+                obj.div(x,y);
+            case 4:System.out.println("enter the number of integers");
+                n = sc.nextInt();
+                if(n>=5){
+                    System.out.println("invalid");
+                    break;
+                }
+                else
+                    System.out.println("enter the numbers");
+                for(int i=0;i<n;i++) {
+                    a[i] = sc.nextInt();
+                }
+                obj.sub(a,n);
+                break;
+
+        }
+    }
+}
+
+

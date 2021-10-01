@@ -1,0 +1,83 @@
+package com.company;
+import java.util.*;
+abstract class Car{
+    abstract void start();
+    abstract void brke();
+    abstract void stop();
+
+}
+class Swift extends Car{
+    public void start(){
+        System.out.println("car starts");
+    }
+    public void brke(){
+        System.out.println("break initiated");
+    }
+    public void stop(){
+        System.out.println("car stops");
+    }
+    public void display(){
+        System.out.println("Swift ");
+    }
+}
+class BMW extends Car{
+    public void start(){
+        System.out.println("car starts");
+    }
+    public void brke(){
+        System.out.println("break initiated");
+    }
+    public void stop(){
+        System.out.println("car stops");
+    }
+    public void display(){
+        System.out.println("BMW");
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Car obj=new Swift();
+        Car obj1=new BMW();
+        obj.start();
+        obj.stop();
+    }
+}
+---------------------------------------
+package com.company;
+
+public interface collegeupdated {
+    public abstract void staff();
+    public abstract void library();
+}
+package com.company;
+
+public interface college extends collegeupdated{
+    public abstract void dept();
+    public abstract void student();
+}
+
+package com.company;
+class Stu implements college{
+        public void dept(){
+            System.out.println("list of departments available in college");
+        }
+        public void student(){
+            System.out.println("student details");
+        }
+        public void staff(){
+            System.out.println("Staff details");
+        }
+        public void library(){
+            System.out.println("list of available books in library");
+        }
+        }
+public class Main {
+    public static void main(String[] args){
+    Stu obj=new Stu();
+    obj.dept();
+    obj.student();
+    obj.staff();
+    obj.library();
+    }
+}

@@ -1,0 +1,32 @@
+import java.io.FileOutputStream;
+public class Main
+{
+	public static void main(String[] args) {
+		FileOutputStream fo=new FileOutputStream("file.txt");
+		String s="Hello World";
+		Byte b[]=s.getBytes();
+		fo.write(b);
+		fo.close();
+	}
+}
+
+-------------------------------------------------------------------------------
+import java.io.FileIntputStream;
+public class Main
+{
+	public static void main(String[] args) {
+		try{
+			FileIntputStream fin=new FileIntputStream("file.txt");
+			int i=0;
+			while((i=fin.read())!=-1){
+				System.out.println((char)i);
+			}
+			fin.close();
+		}
+		catch(exception e){
+			System.out.println(e);
+		}
+	}		
+}
+
+

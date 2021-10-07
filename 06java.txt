@@ -1,0 +1,106 @@
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class ContactTest {
+    Contact obj;
+    
+    @BeforeEach
+    public void setup(){
+        obj = new Contact();
+    }
+    @Test
+    @DisplayName("Firstname is not storing")
+    @RepeatedTest(5)
+    void setFirstName() {
+        obj.setFirstName("hemanth");
+        Assertions.assertFalse(obj.getFirstName().isEmpty());
+    }
+
+//condition
+    @Test
+    void setLastName() {
+        obj.setLastName("hemanth");
+        Assertions.assertFalse(obj.getLastName().isEmpty());
+    }
+
+    @Test
+    void setPhoneNumber() {
+        obj.setPhoneNumber("hemanth");
+        Assertions.assertFalse(obj.getPhoneNumber().isEmpty());
+    }
+
+
+}
+
+---------------------------------------------------------------------------------------
+public class Contact {
+    String[] firstName=new String[5];
+    String[] lastName=new String[5];
+    String[] phoneNumber=new String[5];
+    static int i=0;
+    public String getFirstName() {
+        return firstName[0];
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName[0] = firstName;
+        i=i+1;
+    }
+
+    public String getLastName() {
+        return lastName[0];
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName[0] = lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber[0];
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber[0] = phoneNumber;
+    }
+}
+-----------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.juni</groupId>
+    <artifactId>JuintTesting</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.1.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+</project>
